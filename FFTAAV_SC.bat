@@ -1,3 +1,4 @@
+@echo off
 title FFTAAV: Setting up
 echo FFMpeg dir? (Leave empty to leave as default)
 echo.
@@ -7,9 +8,10 @@ echo Input file? (Insert inside of "" symbols)
 echo.
 set /p input=
 echo.
-echo Output file? (Insert inside of "" symbols)
+echo Output file? (Insert inside of "" symbols, don't put the final file extension)
 echo.
 set /p output=
+set output=%output%.mp4
 echo.
 echo Output resolution? (Will not affect the raw data scaling, leave empty for default of 240x240)
 echo.

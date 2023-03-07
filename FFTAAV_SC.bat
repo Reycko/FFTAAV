@@ -1,3 +1,4 @@
+title FFTAAV: Setting up
 echo FFMpeg dir? (Leave empty to leave as default)
 echo.
 set /p ffmpeg=
@@ -18,4 +19,5 @@ if outputres=="" (set outputres=240x240)
 if ffmpeg=="" (set ffmpeg=ffmpeg) 
 
 rem Command line input.
+title FFTAAV: Executing FFmpeg.
 %ffmpeg% -f rawvideo -pixel_format rgb32 -video_size 32x32 -framerate 10.766666 -i %input% -f u8 -ar 44100 -ac 1 -i %input% -sws_flags neighbor -s %outputres% %output%
